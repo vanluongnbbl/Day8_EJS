@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express') 
 const reload = require('reload')
 
 const upload = require('./configUpload')
@@ -19,11 +19,20 @@ const arrSubjects = ['Mongo', 'Express', 'Angular', 'Nodejs']
 // app.locals.arrSubject = arrSubjects
 
 app.get('/', (req, res) => res.render('home.ejs'))
-app.post('/signup', upload.single('profile'), (req, res) => {
-    res.send(req.body)
+app.post('/signup', upload.array('profile'), (req, res) => {
+    // res.send(req.body)
+    res.send(req.files)
 })
 
 app.get('/learn', (req, res) => res.render('learn.ejs', {username: 'Luong Course', arrSubject: arrSubjects}))
+
+app.use((err, req, res, next) => {
+    res.send(err.message)
+})
+
+app.get('*', (req, res) => {
+    res.send('<h1>404 Not Found</h1>')
+})
 
 reload(app)
 
