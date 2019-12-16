@@ -1,0 +1,29 @@
+{
+  "name": "day8_EJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js -e js,ejs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanluongnbbl/Day8_EJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanluongnbbl/Day8_EJS/issues"
+  },
+  "homepage": "https://github.com/vanluongnbbl/Day8_EJS#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "reload": "^3.0.3"
+  }
+}
