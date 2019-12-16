@@ -1,6 +1,9 @@
 const express = require('express')
 const reload = require('reload')
 
+const multer = require('multer')
+const upload = multer({dest: './public'})
+
 const app = express()
 
 app.set('views', './views')
@@ -17,6 +20,10 @@ const arrSubjects = ['Mongo', 'Express', 'Angular', 'Nodejs']
 // app.locals.arrSubject = arrSubjects
 
 app.get('/', (req, res) => res.render('home.ejs'))
+app.post('/signup', upload.single('profile'), (req, res) => {
+    res.send(req.body)
+})
+
 app.get('/learn', (req, res) => res.render('learn.ejs', {username: 'Luong Course', arrSubject: arrSubjects}))
 
 reload(app)
