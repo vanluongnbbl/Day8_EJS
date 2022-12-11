@@ -20,7 +20,7 @@
   "homepage": "https://github.com/vanluongnbbl/Day8_EJS#readme",
   "dependencies": {
     "ejs": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "multer": "^1.4.2"
   },
   "devDependencies": {
